@@ -4,15 +4,19 @@
 def frequencies(items):
     frequencies = {}
     i = 0
-    items = [str(item).strip(" '") for item in items]
-    while(i<len(items)):
-        if items[i] not in frequencies:
+    items = items.split(',')
+    mod_items = []
+    for item in items:
+        item = item.strip().strip("'")
+        mod_items.append(item)
+    while(i<len(mod_items)):
+        if mod_items[i] not in frequencies:
             counter = 1
             j = i + 1
-            while(j<len(items)):
-                if (str(items[i] == items[j])):
+            while(j<len(mod_items)):
+                if mod_items[i] == mod_items[j]:
                     counter = counter + 1
                 j = j + 1
-            frequencies[items[i]] = counter
+            frequencies[mod_items[i]] = counter
         i = i + 1
     return frequencies
