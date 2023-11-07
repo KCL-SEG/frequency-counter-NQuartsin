@@ -4,11 +4,7 @@
 def frequencies(items):
     frequencies = {}
     i = 0
-    #items = items.split(',')
-    mod_items = []
-    for item in items:
-        item = item.strip().strip("'")
-        mod_items.append(item)
+    mod_items = [str(item) if isinstance(item, int) else item for item in items]
     while(i<len(mod_items)):
         if mod_items[i] not in frequencies:
             counter = 1
