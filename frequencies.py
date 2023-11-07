@@ -4,7 +4,7 @@
 def frequencies(items):
     frequencies = {}
     i = 0
-    items = items.split(',')
+    #items = items.split(',')
     mod_items = []
     for item in items:
         item = item.strip().strip("'")
